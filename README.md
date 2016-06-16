@@ -1,4 +1,4 @@
-##Ruby on Rails + ReactJS App
+#Ruby on Rails + ReactJS App
 
 ###Requirements
 - [npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm)
@@ -17,3 +17,6 @@ $ rails server
 
 Check `localhost:3000` 
 
+###Included
+- `Rails 4.2.6` - backend 
+- `React 15.0.0` - frontend

@@ -9,7 +9,7 @@ require 'action_view'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module DataBrowser
+module App
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -25,10 +25,6 @@ module DataBrowser
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     # config.active_record.raise_in_transactional_callbacks = true
-    config.generators do |g|
-      g.orm :mongoid
-    end
-    config.mongoid.preload_models = false
     config.browserify_rails.commandline_options = "-t babelify --extension=\"es6.js\""
   end
 end
