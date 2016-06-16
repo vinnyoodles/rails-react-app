@@ -5,9 +5,6 @@ class Sidebar extends React.Component {
 
     this.state = {
       selectedModelIndex: -1,
-      filterState: false,
-      positionLeft: 0,
-      positionTop: 0
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -20,10 +17,7 @@ class Sidebar extends React.Component {
     if (e.target.tagName.toLowerCase() === 'i') {
       let position = ReactDOM.findDOMNode(e.target).getBoundingClientRect();
       this.setState({
-          selectedModelIndex: index,
-          filterState: !this.state.filterState,
-          positionLeft: position.left,
-          positionTop: position.bottom
+          selectedModelIndex: index
         });
       } else {
         window.location.href = '/' + this.props.itemsPluralized[index];
@@ -32,25 +26,20 @@ class Sidebar extends React.Component {
 
   closeFilter() {
     this.setState({
-      selectedModelIndex: -1,
-      filterState: false
-    })
+      selectedModelIndex: -1
+    });
   }
 
   _renderItems() {
     let items = [];
     for (let i = 0; i < this.props.items.length; i ++) {
       let selected = window.location.pathname.substring(1) === this.props.itemsPluralized[i] ? ' selected ' : '' ;
-      let filtered = selected && this.props.filtered ? ' filtered ' : '';
-      let filterOpen = this.state.filterState && i == this.state.selectedModelIndex ? ' open ' : '';
       items.push(
         <li key={i} className={selected + ' ' + i} onClick={this.handleClick}>
           <span className={selected + ' ' + i}>
             {this.props.items[i]}
           </span>
-          <div className={'sidebar-filter-container ' + selected + ' ' + i}>
-            <i className={'sidebar-filter-icon fa fa-filter fa-lg' + filterOpen + filtered + ' ' + i}></i>
-          </div>
+          <div className={'sidebar-filter-container ' + selected + ' ' + i}/>
         </li>);
     }
     return items;
@@ -60,21 +49,10 @@ class Sidebar extends React.Component {
     return window.location.pathname === '/';
   }
 
-  _renderFilterMenu() {
-    return <app.FilterList
-      attributes={this.props.keys[this.state.selectedModelIndex]}
-      types={this.props.types[this.state.selectedModelIndex]}
-      model={this.props.itemsPluralized[this.state.selectedModelIndex]}
-      positionLeft={this.state.positionLeft}
-      positionTop={this.state.positionTop}
-      closeFilter={this.closeFilter}
-      />
-  }
 
   render() {
     let items = this._renderItems();
     let isHome = this._isHome() ? 'selected' : '';
-    let filterMenu = this.state.filterState ? this._renderFilterMenu() : <div/>;
     return(
     <div className={'sidebar-wrapper'}>
       <ul className='sidebar-nav'>
@@ -83,7 +61,6 @@ class Sidebar extends React.Component {
       </li>
       {items}
       </ul>
-      {filterMenu}
     </div>)
   }
 }

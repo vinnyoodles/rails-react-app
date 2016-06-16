@@ -3,7 +3,6 @@
 @import "font-awesome";
 @import url("sidebar.scss");
 @import url("table.scss");
-@import url("filter.scss");
 $SidebarWidth: 190px;
 
 /*!
@@ -65,9 +64,4 @@ body {
     position: relative;
     margin-right: 0;
   }
-}
-
-.documentation {
-  overflow-y: auto;
-  height: 100vh;
 }
