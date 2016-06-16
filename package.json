@@ -1,5 +1,5 @@
 {
-  "name": "data-browser",
+  "name": "rails-react-app",
   "dependencies": {
     "browserify": "^10.2.6",
     "browserify-incremental": "^3.0.1",
@@ -36,8 +36,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://code.solebrity.com/internal-projects/data-browser.git"
-  },
-  "author": "",
-  "license": "ISC"
+    "url": "https://github.com/vinnyoodles/rails-react-app.git"
+  }
 }
