@@ -1,7 +1,7 @@
 require('');
 // Component::Manifest
-import Sidebar       from './react/sidebar/sidebar.es6.js';
-import Table         from './react/table/table.es6.js';
+import Sidebar       from './react/sidebar/sidebar.js';
+import Table         from './react/table/table.js';
 
 const app = window.app = global.app = {};
 
