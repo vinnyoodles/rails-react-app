@@ -1,0 +1,12 @@
+default: &default
+  adapter: mongoid
+  pool: 5
+  timeout: 5000
+
+development: &dev
+  <<: *default
+
+test: &test
+  <<: *default
+production:
+  <<: *default
