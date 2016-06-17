@@ -4,8 +4,7 @@
     "browserify": "^10.2.6",
     "browserify-incremental": "^3.0.1",
     "jquery": "^2.2.3",
-    "jquery-ujs": "^1.2.1",
-    "react-bootstrap-table": "^2.3.4"
+    "jquery-ujs": "^1.2.1"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
