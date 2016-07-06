@@ -1,5 +1,7 @@
 #Ruby on Rails + ReactJS App
 
+[![codebeat badge](https://codebeat.co/badges/44249b52-2f0b-4907-a124-17229e7d89a0)](https://codebeat.co/projects/github-com-vinnyoodles-rails-react-app)
+
 ###Why?
 Getting Ruby on Rails and React to play together can be a bit troublesome. So I've saved you guys the frustration with this simple solution.
 
